@@ -57,4 +57,5 @@ feature 'user adds a new TV show', %Q{
     expect(page).to_not have_content 'Success'
     expect(page).to have_content "has already been taken"
   end
+
 end
