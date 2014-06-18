@@ -51,11 +51,11 @@
     </tr>
   </thead>
   <tbody>
-    <%= @television_show.characters.each do |character| %>
+    <% @television_show.characters.each do |character| %>
       <tr>
-        <td>character.character_name</td>
-        <td>character.actor_name</td>
-        <td>character.description</td>
+        <td><%= character.character_name %></td>
+        <td><%= character.actor_name %></td>
+        <td><%= character.description %></td>
       </tr>
     <% end %>
   </tbody>
