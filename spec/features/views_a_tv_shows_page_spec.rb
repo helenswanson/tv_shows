@@ -22,4 +22,20 @@ feature "user views a TV show's details", %Q{
     expect(page).to have_content show.years
     expect(page).to have_content show.synopsis
   end
+
+  scenario "view character information on tv show page" do
+    show = TelevisionShow.create(title: 'Game of Thrones')
+
+    character = Character.create(character_name: 'Arya Stark',
+      actor_name: 'Maisie Williams',
+      description: 'Princess of Winterfell',
+      television_show_id: show.id)
+
+
+    visit "/television_shows/#{show.id}"
+
+    expect(page).to have_content character.character_name
+    expect(page).to have_content character.actor_name
+    expect(page).to have_content character.description
+  end
 end
