@@ -22,13 +22,13 @@ feature 'user views list of characters', %Q{
     ]
 
     character_attrs.each do |attr|
-      characters << CharacterShow.create(attr)
+      characters << Character.create(attr)
     end
 
     visit '/characters'
     characters.each do |character|
       expect(page).to have_content character.character_name
-      expect(page).to have_content character.television_show
+      expect(page).to have_content character.television_show.title
     end
   end
 end

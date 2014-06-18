@@ -3,4 +3,6 @@ TvShows::Application.routes.draw do
     # may not need :new
     resources :characters, only: [:create]
   end
+
+  resources :characters, only: :index
 end
